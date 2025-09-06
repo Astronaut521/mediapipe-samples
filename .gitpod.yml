@@ -1,6 +1,7 @@
 tasks:
-  - name: Setup & Compile Android
+  - name: Setup Android Environment
     init: |
+      sdk install java 17.0.10-zulu
       yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
     command: |
-      echo "Environment is ready. You can now navigate to the project folder and compile."
+      echo "Environment is ready with Java 17. You can now compile the project."
