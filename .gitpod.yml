@@ -1,0 +1,6 @@
+tasks:
+  - name: Setup & Compile Android
+    init: |
+      yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+    command: |
+      echo "Environment is ready. You can now navigate to the project folder and compile."
