@@ -1,7 +1,13 @@
 tasks:
-  - name: Setup Android Environment
+  - name: Setup Ultimate Android Environment
     init: |
       sdk install java 17.0.10-zulu
+      source ~/.bashrc
       yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
     command: |
-      echo "Environment is ready with Java 17. You can now compile the project."
+      echo "sdk.dir=$ANDROID_HOME" > examples/llm_inference/android/local.properties
+      echo "Ultimate environment is ready. You can now compile the project."
+
+ports:
+  - port: 6080
+    onOpen: open-browser
